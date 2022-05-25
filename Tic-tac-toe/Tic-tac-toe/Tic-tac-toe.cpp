@@ -68,7 +68,7 @@ int main() {
         else if (play_with == 'o') {
             char startGame;
             std::ifstream DATA("data.txt");
-            if (!DATA.is_open()) std::cout << "\n   Файл с вашими данными не открывается! Если он не создат, то создайте его\n"; // Если не открылся
+            if (!DATA.is_open()) std::cout << "\n   Файл с вашими данными не открывается! Если он не создан, то создайте его\n"; // Если не открылся
             else if (DATA.peek() == EOF) /*Если первый символ конец файла*/{ 
                 // Создание учётной записи в файле
                 DATA.close();
@@ -164,10 +164,10 @@ void Online() {
 
     // 1-й раунд: запрос хода, проверка, увеличение счётчиков
     message = "\n\t\ Раунды: | ? | - | - | ";
-    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == player1)) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == player2))) {
+    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O'))) {
         firstWins++; wins[0] = 1;
     }
-    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == player2)) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == player1)))
+    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')))
     {
         secondWins++; wins[0] = 2;
     }
@@ -183,10 +183,10 @@ void Online() {
     else { turnRatio = 1; player1 = 'X'; player2 = 'O'; }
 
     // 2-й раунд: запрос хода, проверка, увеличение счётчиков
-    if ((turnRatio && PlayWithComputer(2000, player1, player2, turnRatio) == player2) || (!turnRatio && PlayWithComputer(2000, player1, player2, turnRatio) == player1)) {
+    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O'))) {
         firstWins++; wins[1] = 1;
     }
-    else if ((turnRatio && PlayWithComputer(2000, player1, player2, turnRatio) == player1) || (!turnRatio && PlayWithComputer(2000, player1, player2, turnRatio) == player2))
+    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')))
     {
         secondWins++; wins[1] = 2;
     }
@@ -212,10 +212,11 @@ void Online() {
     else { turnRatio = 1; player1 = 'X'; player2 = 'O'; }
     CleanBoard();
     // 3-й раунд: запрос хода, проверка, увеличение счётчиков
-    if (PlayWithComputer(2000, player1, player2, turnRatio) == player1) {
+    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O'))) {
         firstWins++;
     }
-    else if (PlayWithComputer(2000, player1, player2, turnRatio) == player2) {
+    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')))
+    {
         secondWins++;
     }
     else {
