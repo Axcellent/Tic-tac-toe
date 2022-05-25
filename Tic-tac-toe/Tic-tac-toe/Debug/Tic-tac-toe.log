@@ -1,0 +1,18 @@
+﻿  Tic-tac-toe.cpp
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(143,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(166,15): warning C4129: : неизвестная escape-последовательность
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(177,15): warning C4129: : неизвестная escape-последовательность
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(196,15): warning C4129: : неизвестная escape-последовательность
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(355,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(364,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(380,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(377,45): warning C4101: typeOfMove: неиспользованная локальная переменная
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(395,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(393,15): warning C4101: typeOfMove: неиспользованная локальная переменная
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(393,32): warning C4101: player: неиспользованная локальная переменная
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(419,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(439): warning C4715: FirstComputerMove: значение возвращается не при всех путях выполнения
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(480): warning C4715: PlayWithFriend: значение возвращается не при всех путях выполнения
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(538): warning C4715: PlayWithComputer: значение возвращается не при всех путях выполнения
+C:\Users\Пользователь\source\repos\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp(415): warning C4715: ComputerMoveHard: значение возвращается не при всех путях выполнения
+  Tic-tac-toe.vcxproj -> C:\Users\Пользователь\source\repos\Tic-tac-toe\Debug\Tic-tac-toe.exe
