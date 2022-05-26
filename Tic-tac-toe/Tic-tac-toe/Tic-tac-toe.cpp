@@ -138,11 +138,12 @@ int main() {
     return 0;
 }
 
+// Функция симуляции игры онлайн
 void Online() {
     cntOfGames++; // Увеличение количества игр
     srand(time(NULL));
     enemyID = ((rand() * rand() / rand()) * rand() % rand()) / 10;
-    char player1, player2;
+    char player1, player2, winner;
     int firstWins = 0, secondWins = 0, ties = 0, turnRatio;
     int wins[3];
 
@@ -164,10 +165,11 @@ void Online() {
 
     // 1-й раунд: запрос хода, проверка, увеличение счётчиков
     message = "\n\t\ Раунды: | ? | - | - | ";
-    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O'))) {
+    winner = PlayWithComputer(2000, player1, player2, turnRatio);
+    if ((turnRatio && (winner == 'X')) || (!turnRatio && (winner == 'O'))) {
         firstWins++; wins[0] = 1;
     }
-    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')))
+    else if ((turnRatio && (winner == 'O')) || (!turnRatio && (winner == 'X')))
     {
         secondWins++; wins[0] = 2;
     }
@@ -176,17 +178,17 @@ void Online() {
     }
     message = "\n\t\ Раунды: | "; message.append(std::to_string(wins[0])); message.append(" | ? | - | ");
     
-    CleanBoard();
-    PrintBoard();
     // Обмен игроков местами
     if (turnRatio) { turnRatio = 0; player1 = 'O'; player2 = 'X'; }
     else { turnRatio = 1; player1 = 'X'; player2 = 'O'; }
 
+    CleanBoard();
     // 2-й раунд: запрос хода, проверка, увеличение счётчиков
-    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O'))) {
+    winner = PlayWithComputer(2000, player1, player2, turnRatio);
+    if ((turnRatio && (winner == 'X')) || (!turnRatio && (winner == 'O'))) {
         firstWins++; wins[1] = 1;
     }
-    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')))
+    else if ((turnRatio && (winner == 'O')) || (!turnRatio && (winner == 'X')))
     {
         secondWins++; wins[1] = 2;
     }
@@ -210,12 +212,14 @@ void Online() {
     // Обмен игроков местами
     if (turnRatio) { turnRatio = 0; player1 = 'O'; player2 = 'X'; }
     else { turnRatio = 1; player1 = 'X'; player2 = 'O'; }
+
     CleanBoard();
     // 3-й раунд: запрос хода, проверка, увеличение счётчиков
-    if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O'))) {
+    winner = PlayWithComputer(2000, player1, player2, turnRatio);
+    if ((turnRatio && (winner == 'X')) || (!turnRatio && (winner == 'O'))) {
         firstWins++;
     }
-    else if ((turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'O')) || (!turnRatio && (PlayWithComputer(2000, player1, player2, turnRatio) == 'X')))
+    else if ((turnRatio && (winner == 'O')) || (!turnRatio && (winner == 'X')))
     {
         secondWins++;
     }
@@ -311,7 +315,7 @@ bool Winning(char player)
 // Функция вывода на экран поля
 void PrintBoard()
 {
-    std::cout << std::endl << " id#" << enemyID << message << std::endl;
+    std::cout << std::endl << " id#" << enemyID << std::endl << message << std::endl;
     std::cout << "-" << board[6] << "-|-" << board[7] << "-|-" << board[8] << "-\n";
     std::cout << "-" << board[3] << "-|-" << board[4] << "-|-" << board[5] << "-\n";
     std::cout << "-" << board[0] << "-|-" << board[1] << "-|-" << board[2] << "-\n";
